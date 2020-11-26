@@ -5,6 +5,14 @@ lazy val Fs2Kafka = "com.github.fd4s" %% "fs2-kafka" % "1.1.0"
 lazy val Logback = "ch.qos.logback" % "logback-classic" % "1.2.3"
 lazy val MongoScalaDriver = "org.mongodb.scala" %% "mongo-scala-driver" % "4.0.5"
 
+val circeVersion = "0.12.3"
+
+lazy val Circe  = Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % circeVersion)
+
 lazy val Fs2= Seq(
  "co.fs2" %% "fs2-core" ,
 // optional I/O library
@@ -13,8 +21,10 @@ lazy val Fs2= Seq(
  "co.fs2" %% "fs2-reactive-streams"
 ).map(_ % fs2Version)
 lazy val Log4Cat = "io.chrisdavenport" %% "log4cats-slf4j" % "1.1.1"
+lazy val PureConfig = "com.github.pureconfig" %% "pureconfig" % "0.14.0"
 
 lazy val QRSDBRoot = (project in file("."))
+  .enablePlugins(JavaAppPackaging)
   .settings(
     name := "cinvestav-qrs-db",
     version := "0.1",
@@ -24,6 +34,7 @@ lazy val QRSDBRoot = (project in file("."))
       MongoScalaDriver,
       Logback,
       Fs2Kafka,
-      Log4Cat
-    )  ++ Fs2
+      Log4Cat,
+      PureConfig
+    )  ++Fs2  ++ Circe
   )

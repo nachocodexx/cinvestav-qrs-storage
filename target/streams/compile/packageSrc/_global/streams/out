@@ -1,0 +1,13 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/nacho/Programming/Scala/cinvestav-qrs-db/target/scala-2.12/cinvestav-qrs-db_2.12-0.1-sources.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/nacho/Programming/Scala/cinvestav-qrs-db/src/main/resources/logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/cinvestav/QRSMongoDB.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/nacho/Programming/Scala/cinvestav-qrs-db/src/main/scala/com/cinvestav/QRSMongoDB.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/cinvestav/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/nacho/Programming/Scala/cinvestav-qrs-db/src/main/scala/com/cinvestav/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/cinvestav/DBProducer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/nacho/Programming/Scala/cinvestav-qrs-db/src/main/scala/com/cinvestav/DBProducer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/cinvestav/DBConsumer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/nacho/Programming/Scala/cinvestav-qrs-db/src/main/scala/com/cinvestav/DBConsumer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
