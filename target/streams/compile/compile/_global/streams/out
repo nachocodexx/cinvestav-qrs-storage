@@ -1,5 +1,0 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/nacho/Programming/Scala/cinvestav-qrs-db/src/main/scala/com/cinvestav/Main.scala:16:22: imported `DBProducer' is permanently hidden by definition of object DBProducer in package cinvestav[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport com.cinvestav.DBProducer[0m
-[0m[[0m[33mwarn[0m] [0m[0m                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mthere were four feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
