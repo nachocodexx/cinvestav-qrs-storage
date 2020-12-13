@@ -1,6 +1,6 @@
 package com.cinvestav.domain
 
-final case class SensorMeasurement(
+final case class QRSComplexResult(
                               sensorId:String,
                               measurement:Double,
                               timestamp:Long,

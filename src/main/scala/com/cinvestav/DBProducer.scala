@@ -2,19 +2,25 @@ package com.cinvestav
 import cats.implicits._
 import cats.effect.implicits._
 import cats.effect.{ConcurrentEffect, ContextShift, IO, Timer}
-import fs2.kafka.{CommittableConsumerRecord, ConsumerStream, KafkaProducer, ProducerRecord, ProducerRecords, ProducerSettings, produce, producerStream}
+import com.cinvestav.domain.{QRSComplexEvent, QRSComplexEventKey}
+import fs2.kafka.{ KafkaProducer, ProducerRecord, ProducerRecords, ProducerSettings, produce, producerStream}
 import fs2.Stream
-import io.circe.Json
 
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
 class DBProducer[F[_]:ConcurrentEffect:ContextShift:Timer](BOOTSTRAP_SERVERS:String){
 
-  val PRODUCER_SETTINGS: ProducerSettings[F, Option[String], String] = ProducerSettings[F,Option[String],String]
+  import com.cinvestav.avro.serializers.VulcanSerializer
+  val serializer: VulcanSerializer[F] = VulcanSerializer[F]()
+  val PRODUCER_SETTINGS: ProducerSettings[F, QRSComplexEventKey, QRSComplexEvent] =
+    ProducerSettings[F,QRSComplexEventKey,QRSComplexEvent](
+      keySerializer = serializer.keyDeserializer,
+      valueSerializer = serializer.valueDeserializer
+    )
     .withBootstrapServers(BOOTSTRAP_SERVERS)
 
-  def runStream(): Stream[F, KafkaProducer.Metrics[F, Option[String], String]] =
+  def runStream(): Stream[F, KafkaProducer.Metrics[F, QRSComplexEventKey, QRSComplexEvent]] =
     producerStream[F]
       .using(PRODUCER_SETTINGS)
 }
